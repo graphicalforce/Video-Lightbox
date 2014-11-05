@@ -19,12 +19,21 @@ function freeman_enque_script_styles() {
 
 	wp_enqueue_script( 'video_lightbox_script', plugins_url() . '/videoLightbox/js/script.js' );
 
-	wp_enqueue_style( 'video_lightbox_style', plugins_url() . '/videoLightbox/css/lightGallery.css' );
+	wp_enqueue_style( 'video_lightbox', plugins_url() . '/videoLightbox/css/lightGallery.css' );
+
+	wp_enqueue_style( 'video_lightbox_style', plugins_url() . '/videoLightbox/css/lightGalleryStyle.css' );
+
 }
 
 add_shortcode('video', 'freeman_video_shortcode');
 
 function freeman_video_shortcode( $atts, $content = "" ) {
 
-	return '<ul class="video"><li data-src="' . $content . '"><a href="#">http://img.youtube.com/vi/CBt-mXIY-tI/sddefault.jpg</a></li></ul>';
+	$video_url = $content;
+
+	$trim = "https://www.youtube.com/watch?v=";
+
+	$trimmed = ltrim( $content, $trim );
+
+	return '<ul class="video"><li data-src="' . $video_url . '"><a href="#"><img src="http://img.youtube.com/vi/' . $trimmed . '/hqdefault.jpg" /><img class="freeman-play-button" src="' . plugins_url() . '/videoLightbox/img/playbutton.png"></a></li></ul>';
 }
