@@ -21,3 +21,10 @@ function freeman_enque_script_styles() {
 
 	wp_enqueue_style( 'video_lightbox_style', plugins_url() . '/videoLightbox/css/lightGallery.css' );
 }
+
+add_shortcode('video', 'freeman_video_shortcode');
+
+function freeman_video_shortcode( $atts, $content = "" ) {
+
+	return '<ul class="video"><li data-src="' . $content . '"><a href="#">http://img.youtube.com/vi/CBt-mXIY-tI/sddefault.jpg</a></li></ul>';
+}

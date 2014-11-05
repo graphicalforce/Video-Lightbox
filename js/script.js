@@ -1,3 +1,3 @@
 jQuery(document).ready(function($) {
-  $("#video").lightGallery(); 
+  $(".video").lightGallery(); 
 });
