@@ -9,8 +9,15 @@
 */
 
 
-add_action( 'init', 'freeman_video_lightbox' );
+add_action( 'init', 'freeman_enque_script_styles' );
 
-function freeman_video_lightbox() {
-	wp_enqueue_script( 'video_lightbox', plugins_url() . '/js/lightGallery.js' );
+function freeman_enque_script_styles() {
+
+	wp_enqueue_script( 'jquery' );
+
+	wp_enqueue_script( 'video_lightbox_lightGallery', plugins_url() . '/videoLightbox/js/lightGallery.js' );
+
+	wp_enqueue_script( 'video_lightbox_script', plugins_url() . '/videoLightbox/js/script.js' );
+
+	wp_enqueue_style( 'video_lightbox_style', plugins_url() . '/videoLightbox/css/lightGallery.css' );
 }
