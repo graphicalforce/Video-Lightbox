@@ -27,13 +27,18 @@ function freeman_enque_script_styles() {
 
 add_shortcode('video', 'freeman_video_shortcode');
 
-function freeman_video_shortcode( $atts, $content = "" ) {
+function freeman_video_shortcode( $atts ) {
+	$a = shortcode_atts( array(
+		'url' => 'something',
+		'thumb' => 'nothing',
+	), $atts );
 
-	$video_url = $content;
+	$video_url =  $a['url'];
+	$thumb_url = $a['thumb'];
 
 	$trim = "https://www.youtube.com/watch?v=";
 
-	$trimmed = ltrim( $content, $trim );
+	$trimmed = ltrim( $video_url, $trim );
 
-	return '<ul class="video"><li data-src="' . $video_url . '"><a href="#"><img src="http://img.youtube.com/vi/' . $trimmed . '/hqdefault.jpg" /><img class="freeman-play-button" src="' . plugins_url() . '/videoLightbox/img/playbutton.png"></a></li></ul>';
+	return '<ul class="video"><li data-src="' . $video_url . '"><a href="#"><img src="' . $thumb_url . '" /><img class="freeman-play-button" src="' . plugins_url() . '/videoLightbox/img/playbutton.png"></a></li></ul>';
 }
