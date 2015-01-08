@@ -1,4 +1,10 @@
-.freeman-play-button { 
-	margin-left: -50%; 
-	margin-bottom: 25%; 
-}
+#freeman-play-button { 
+	background-image: url("../img/wplay.png");
+	background-repeat: no-repeat;
+    height: 82px;
+    margin: -47% auto 47% auto;
+	position: relative;
+    width: 66px;
+}	
+
+<div>Icon made by <a href="http://catalinfertu.com" title="Catalin Fertu">Catalin Fertu</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>

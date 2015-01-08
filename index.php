@@ -40,5 +40,5 @@ function freeman_video_shortcode( $atts ) {
 
 	$trimmed = ltrim( $video_url, $trim );
 
-	return '<ul class="video"><li data-src="' . $video_url . '"><a href="#"><img src="' . $thumb_url . '" /><img class="freeman-play-button" src="' . plugins_url() . '/videoLightbox/img/playbutton.png"></a></li></ul>';
+	return '<ul class="video"><li data-src="' . $video_url . '"><a href="#"><img src="' . $thumb_url . '" /><div id="freeman-play-button"></div></a></li></ul>';
 }
